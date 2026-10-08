@@ -34,6 +34,35 @@ public class StudiKasus201 {
                     System.out.println("Alasan              : Bukan Juara 1, 2, atau 3");
                 }
             }
-        } 
+        } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+            System.out.print("Masukkan Status pendanaan PKM (1 = Lolos, 0 = Tidak Lolos) : ");
+            pendanaanPKM = input.nextInt();
+            System.out.print("Masukkan Jumlah Dokumen (0-4)                              : ");
+            jumlahDokumen = input.nextInt();
+            if (jumlahDokumen < 4) {
+                System.out.println("--- Hasil ---");
+                System.out.println("Nama Mahasiswa      : " + nama);
+                System.out.println("Status Dana         : TIDAK DIBERIKAN");
+                System.out.println("Alasan              : Dokumen Tidak Lengkap");
+                System.out.println("Dokumen Kurang      : " + (4 - jumlahDokumen));
+            } else {
+                if (pendanaanPKM == 1) {
+                    System.out.println("--- Hasil ---");
+                    System.out.println("Nama Mahasiswa      : " + nama);
+                    System.out.println("Status Dana         : DIBERIKAN");
+                    System.out.println("Alasan              : PKM lolos pendanaan dan dokumen lengkap");
+                } else {
+                    System.out.println("--- Hasil ---");
+                    System.out.println("Nama Mahasiswa      : " + nama);
+                    System.out.println("Status Dana         : TIDAK DIBERIKAN");
+                    System.out.println("Alasan              : PKM tidak lolos pendanaan");
+                }
+            }
+        } else {
+            System.out.println("--- Hasil ---");
+            System.out.println("Nama Mahasiswa      : " + nama);
+            System.out.println("Status Dana         : TIDAK DIBERIKAN");
+            System.out.println("Alasan              : Jenis Kegiatan Tidak Valid");   
+            }
     }
 }
